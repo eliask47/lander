@@ -86,32 +86,42 @@
         { name: "Jasmine R.", amount: "$825" },
         { name: "Mike D.", amount: "$600" },
         { name: "Tina W.", amount: "$1,000" },
-        { name: "Chris B.", amount: "$720" }
+        { name: "Chris B.", amount: "$720" },
+        { name: "Sadie L.", amount: "$890" },
+        { name: "Olivia A.", amount: "$800" },
+        { name: "Kayla C.", amount: "$900" },
+        { name: "Peter P.", amount: "$620" }
       ];
 
-      let current = 0;
-      const alertBox = document.getElementById("nameAlert");
-      const alertText = document.getElementById("alertText");
+  let current = 0;
+  const alertBox = document.getElementById("nameAlert");
+  const alertText = document.getElementById("alertText");
 
-      function showAlert() {
-        const alert = alerts[current];
-        alertText.innerHTML = `<span class="name">${alert.name}</span> received ${alert.amount}!`;
+  function showAlert() {
+    const alert = alerts[current];
+    alertText.innerHTML = `<span class="name">${alert.name}</span> received ${alert.amount}!`;
 
-        alertBox.classList.remove("fade-out");
-        alertBox.classList.add("slide-in");
+    // Remove existing classes to restart animation
+    alertBox.classList.remove("fade-out", "slide-in");
 
-        // Fade out after 2 seconds
-        setTimeout(() => {
-          alertBox.classList.add("fade-out");
-          alertBox.classList.remove("slide-in");
-        }, 2000);
+    // Force reflow (flush browser styling)
+    void alertBox.offsetWidth;
 
-        current = (current + 1) % alerts.length;
-      }
+    // Add slide-in again
+    alertBox.classList.add("slide-in");
 
-      showAlert(); // initial
-      setInterval(showAlert, 3000); // every 3 seconds
-    </script>
+    // Fade out after 2 seconds
+    setTimeout(() => {
+      alertBox.classList.add("fade-out");
+      alertBox.classList.remove("slide-in");
+    }, 2000);
+
+    current = (current + 1) % alerts.length;
+  }
+
+  showAlert(); // initial
+  setInterval(showAlert, 3000); // repeat every 3 seconds
+</script>
 
         <script>
       document.getElementById("claimButton").onclick = function () {

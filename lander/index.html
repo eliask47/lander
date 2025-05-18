@@ -182,10 +182,10 @@
   <div id="particles-js" style="position:fixed;width:100%;height:100%;z-index:1"></div>
 
   <!-- Notification bar -->
-  <div id="nameAlert" style="display: flex;">
-    <img alt="Venmo" loading="lazy" width="35" height="35" src="Create Next App_files/vlogo.png">
-    <div><span class="name">Liam K.</span> received $750!</div>
-  </div>
+<div id="nameAlert" style="display: flex;">
+  <img src="Create Next App_files/vlogo.png" width="35" height="35" alt="Venmo">
+  <div id="alertText"><span class="name">Liam K.</span> received $750!</div>
+</div>
 
   <!-- Main content -->
   <div class="page-container">
@@ -220,5 +220,22 @@
       window.location.href = "https://example.com"; // Replace this
     };
   </script>
+  <script>
+  const alerts = [
+    { name: "Liam K.", amount: "$750" },
+    { name: "Jasmine R.", amount: "$825" },
+    { name: "Mike D.", amount: "$600" },
+    { name: "Tina W.", amount: "$1,000" },
+    { name: "Chris B.", amount: "$720" }
+  ];
+
+  let current = 0;
+  setInterval(() => {
+    const alert = alerts[current];
+    document.getElementById("alertText").innerHTML = `<span class="name">${alert.name}</span> received ${alert.amount}!`;
+    current = (current + 1) % alerts.length;
+  }, 5000);
+</script>
+
 </body>
 </html>

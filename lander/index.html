@@ -11,21 +11,12 @@
     <link rel="stylesheet" href="./Create Next App_files/de7803d08a67f32e.css" data-precedence="next" />
 
     <style>
-      @keyframes slide-in-one-tap {
-        from {
-          transform: translateY(80px);
-        }
-        to {
-          transform: translateY(0px);
-        }
-      }
-
-      /* Notification animation */
+      /* Alert Animation Styles */
       .notification {
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
         background-color: #f5f5f5;
         display: flex;
         align-items: center;
@@ -35,13 +26,13 @@
         font-size: 14px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 9999;
-        transform: translateY(-100%);
         opacity: 0;
         transition: transform 0.4s ease, opacity 0.4s ease;
+        border-radius: 8px;
       }
 
       .notification.slide-in {
-        transform: translateY(0%);
+        transform: translateX(-50%) translateY(0%);
         opacity: 1;
       }
 
@@ -87,6 +78,8 @@
     </div>
 
     <!-- Scripts -->
+    <script src="Create Next App_files/particles.min.js" async></script>
+
     <script>
       const alerts = [
         { name: "Liam K.", amount: "$750" },
@@ -107,20 +100,20 @@
         alertBox.classList.remove("fade-out");
         alertBox.classList.add("slide-in");
 
+        // Fade out after 2 seconds
         setTimeout(() => {
           alertBox.classList.add("fade-out");
           alertBox.classList.remove("slide-in");
-        }, 1000); // visible for 1 sec
+        }, 2000);
 
         current = (current + 1) % alerts.length;
       }
 
-      showAlert(); // show first alert
-      setInterval(showAlert, 2000); // show new every 2 sec
+      showAlert(); // initial
+      setInterval(showAlert, 3000); // every 3 seconds
     </script>
-        <script src="Create Next App_files/particles.min.js" async></script>
 
-    <script>
+        <script>
       document.getElementById("claimButton").onclick = function () {
         window.location.href = "https://example.com"; // Replace with your offer link
       };

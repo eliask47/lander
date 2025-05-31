@@ -46,21 +46,24 @@
       }
 
       .buffer-btn {
-        background: linear-gradient(to bottom, #4dabf7, #1e90ff);
-        border: none;
-        border-radius: 8px;
-        color: white;
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
         font-size: 16px;
-        padding: 12px 24px;
-        margin: 10px 0;
+        padding: 16px 32px;
+        border: none;
+        border-radius: 12px;
+        color: white;
+        background: linear-gradient(to bottom, #3fa9f5, #007bff);
+        box-shadow: 0 4px 14px rgba(0, 123, 255, 0.35);
         cursor: pointer;
         width: 100%;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: background 0.3s ease;
+        transition: background 0.3s ease, transform 0.1s ease;
+        margin: 10px 0;
       }
 
       .buffer-btn:hover {
-        background: linear-gradient(to bottom, #1e90ff, #1c7ed6);
+        background: linear-gradient(to bottom, #007bff, #0061ff);
+        transform: translateY(-1px);
       }
 
       #lander {

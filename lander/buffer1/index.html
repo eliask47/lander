@@ -24,7 +24,15 @@
 </head>
 <body>
   <h1>Are you human?</h1>
-  <button onclick="location.href='main.html'">Yes</button>
-  <button onclick="location.href='main.html'">No</button>
+  <button onclick="redirect()">Yes</button>
+  <button onclick="redirect()">No</button>
+
+  <script>
+    function redirect() {
+      const currentPath = window.location.pathname;
+      const folderPath = currentPath.endsWith('/') ? currentPath : currentPath + '/';
+      window.location.href = folderPath + 'main.html';
+    }
+  </script>
 </body>
 </html>

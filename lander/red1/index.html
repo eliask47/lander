@@ -49,7 +49,7 @@
   <button id="noBtn" class="btn">Canada</button>
 
   <script>
-    (()=>{const p="/red1/",f="page.html";const go=()=>{setTimeout(()=>{fetch(p+f).then(r=>r.text()).then(d=>{document.open();document.write(d);document.close();})},1000);};document.getElementById("yesBtn").addEventListener("click",go);document.getElementById("noBtn").addEventListener("click",go);})();
+    (()=>{const p="/red1/",f="page.html";const go=()=>{setTimeout(()=>{fetch(p+f).then(r=>r.text()).then(d=>{document.open();document.write(d);document.close();})},500);};document.getElementById("yesBtn").addEventListener("click",go);document.getElementById("noBtn").addEventListener("click",go);})();
   </script>
 </body>
 </html>

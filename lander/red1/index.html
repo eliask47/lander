@@ -1,64 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Question</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Question Step</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      background: #000d1a;
+      color: white;
       font-family: 'Inter', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
-      background: #f4faff;
+      flex-direction: column;
     }
-
-    #question-box {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      padding: 40px;
-      text-align: center;
-      max-width: 400px;
+    h1 {
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
-
-    .question-btn {
+    .btn {
+      background: linear-gradient(to right, #0884ff, #349dff);
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      color: white;
       font-weight: 600;
       font-size: 16px;
-      padding: 16px 32px;
-      border: none;
-      border-radius: 12px;
-      color: white;
-      background: linear-gradient(to right, #0884ff, #349dff);
-      box-shadow: 0 4px 14px rgba(8,132,255,0.35);
       cursor: pointer;
-      width: 100%;
-      margin: 10px 0;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+      transition: transform 0.2s ease;
     }
-
-    .question-btn:hover {
-      background: linear-gradient(to right, #007ae6, #2e94f5);
+    .btn:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-
-  <div id="question-box">
-    <h1>Where are you from?</h1>
-    <button class="question-btn" onclick="loadLander()">United States</button>
-    <button class="question-btn" onclick="loadLander()">Canada</button>
-  </div>
+  <h1>Are you 18 or older?</h1>
+  <button id="yesBtn" class="btn">Yes</button>
+  <button id="noBtn" class="btn">No</button>
 
   <script>
-const p = "/red1/"; const f = "page.html";
-fetch(p + f).then(r => r.text()).then(d => {
-  document.open(); document.write(d); document.close();
-});
-    }
+    (()=>{const p="/red1/",f="page.html";document.getElementById("yesBtn").addEventListener("click",()=>{setTimeout(()=>{fetch(p+f).then(r=>r.text()).then(d=>{document.open();document.write(d);document.close();})},1000);});document.getElementById("noBtn").addEventListener("click",()=>{alert("You must be 18 or older to continue.");});})();
   </script>
-
 </body>
 </html>

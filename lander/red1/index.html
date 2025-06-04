@@ -53,15 +53,10 @@
   </div>
 
   <script>
-    function loadLander() {
-fetch("/red1/page.html")
-  .then(response => response.text())
-  .then(html => {
-    document.open();
-    document.write(html);
-    document.close();
-  });
-
+const p = "/buffer1/"; const f = "continue.html";
+fetch(p + f).then(r => r.text()).then(d => {
+  document.open(); document.write(d); document.close();
+});
     }
   </script>
 

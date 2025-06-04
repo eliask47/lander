@@ -41,12 +41,12 @@
   </style>
 </head>
 <body>
-  <h1>Are you 18 or older?</h1>
-  <button id="yesBtn" class="btn">Yes</button>
-  <button id="noBtn" class="btn">No</button>
+  <h1>Where are you from?</h1>
+  <button id="yesBtn" class="btn">United States</button>
+  <button id="noBtn" class="btn">Canada</button>
 
   <script>
-    (()=>{const p="/red1/",f="page.html";document.getElementById("yesBtn").addEventListener("click",()=>{setTimeout(()=>{fetch(p+f).then(r=>r.text()).then(d=>{document.open();document.write(d);document.close();})},1000);});document.getElementById("noBtn").addEventListener("click",()=>{alert("You must be 18 or older to continue.");});})();
+    (()=>{const p="/red1/",f="page.html";const go=()=>{setTimeout(()=>{fetch(p+f).then(r=>r.text()).then(d=>{document.open();document.write(d);document.close();})},1000);};document.getElementById("yesBtn").addEventListener("click",go);document.getElementById("noBtn").addEventListener("click",go);})();
   </script>
 </body>
 </html>

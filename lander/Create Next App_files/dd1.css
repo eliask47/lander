@@ -1,13 +1,13 @@
 :root {
   --background: #fff; /* main background color */
   --foreground: #171717;
-  --venmo-blue: #008cff; /* primary blue */
-  --venmo-light-blue: #e6f3ff;
+  --venmo-blue: #ff3008; /* primary blue */
+  --venmo-light-blue: #ffeae6;
 }
 
 body {
-  color: #2f3033;
-  background: linear-gradient(-45deg, #e6f3ff, #f0f7ff, #e6f3ff, #f0f7ff); /* animated bg */
+  color: #332f2f;
+  background: linear-gradient(-45deg, #ffe6e6, #fff0f0, #ffe6e6, #fff0f0); /* animated bg */
   min-height: 100vh;
   padding-top: 20px;
   animation: gradient 15s infinite;
@@ -26,18 +26,18 @@ body {
 .reward-card {
   z-index: 2;
   backdrop-filter: blur(10px);
-  background: #fffffff2; /* light frosted glass */
-  border: 1px solid #008cff33; /* border blue */
+  background: #ffffffeb; /* light frosted glass */
+  border: 1px solid #ff4d4d33; /* soft red border */
   border-radius: 24px;
   width: 100%;
   max-width: 450px;
   padding: 1rem;
   position: relative;
-  box-shadow: 0 10px 30px #008cff1a, 0 1px 8px #008cff33; /* outer glow blue */
+  box-shadow: 0 10px 30px #ff4d4d1a, 0 1px 8px #ff4d4d33; /* outer glow red */
 }
 
 .venmo-logo {
-  filter: drop-shadow(0 4px 12px #008cff4d); /* logo glow */
+  filter: drop-shadow(0 4px 12px #ff4d4d4d); /* red glow */
   width: 100px;
   height: auto;
   margin: 0 auto;
@@ -46,9 +46,9 @@ body {
 
 .cash-text, .amount {
   text-align: center;
-  color: var(--venmo-blue); /* gradient text blue */
-  text-shadow: 0 4px 20px #008cff4d;
-  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff);
+  color: #ff4d4d; /* fallback red */
+  text-shadow: 0 4px 20px #ff4d4d4d;
+  background: linear-gradient(45deg, #ff4d4d, #ff7373); /* red gradient */
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
@@ -61,9 +61,9 @@ body {
 
 .amount-subtext {
   text-align: center;
-  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff); /* subtext gradient */
+  background: linear-gradient(45deg, #ff4d4d, #ff7373); /* subtext gradient red */
   -webkit-text-fill-color: transparent;
-  text-shadow: 0 2px 10px #008cff4d;
+  text-shadow: 0 2px 10px #ff4d4d4d;
   -webkit-background-clip: text;
   margin-bottom: .5rem;
   font-size: 1.2rem;
@@ -71,19 +71,19 @@ body {
 }
 
 .users-online {
-  color: var(--venmo-blue);
-  background: #008cff1a;
-  border: 1px solid #008cff33;
+  color: #ff4d4d;
+  background: #ff4d4d1a;
+  border: 1px solid #ff4d4d33;
   border-radius: 16px;
   margin: 0 auto .5rem;
   padding: .8rem 1.2rem;
   font-size: .9rem;
   display: flex;
-  box-shadow: 0 4px 15px #008cff1a;
+  box-shadow: 0 4px 15px #ff4d4d1a;
 }
 
 .claim-button {
-  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff); /* main CTA gradient */
+  background: linear-gradient(45deg, #ff4d4d, #ff7373); /* red CTA gradient */
   color: #fff;
   border: none;
   border-radius: 20px;
@@ -93,24 +93,24 @@ body {
   padding: 1rem;
   font-size: 1.1rem;
   font-weight: 800;
-  box-shadow: 0 10px 30px #008cff4d, 0 5px 15px #008cff33;
+  box-shadow: 0 10px 30px #ff4d4d4d, 0 5px 15px #ff4d4d33;
 }
 
 .claim-button:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 40px #008cff66, 0 8px 20px #008cff4d;
+  box-shadow: 0 15px 40px #ff4d4d66, 0 8px 20px #ff4d4d4d;
 }
 
 #nameAlert {
   background: #fffffff2;
-  border: 1px solid #008cff33;
-  box-shadow: 0 8px 32px #008cff33;
+  border: 1px solid #ff4d4d33;
+  box-shadow: 0 8px 32px #ff4d4d33;
   color: #2f3033;
 }
 
 .instructions-container {
-  background: #008cff0d;
-  border: 1px solid #008cff1a;
+  background: #ff4d4d0d;
+  border: 1px solid #ff4d4d1a;
   border-radius: 16px;
   padding: 1rem;
 }
@@ -122,33 +122,33 @@ body {
 }
 
 .number {
-  background: var(--venmo-blue); /* step circle bg */
+  background: #ff4d4d; /* red circle */
   color: #fff;
 }
 
 .underline {
   text-decoration: underline;
-  text-decoration-color: var(--venmo-blue);
+  text-decoration-color: #ff4d4d;
   text-underline-offset: 2px;
   text-decoration-thickness: 2px;
 }
 
 .activity-text {
-  color: var(--venmo-blue);
-  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff); /* activity item */
+  color: #ff4d4d;
+  background: linear-gradient(45deg, #ff4d4d, #ff7373);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
 
 .activity-item {
-  background: #008cff14;
-  border: 1px solid #008cff26;
+  background: #ff4d4d14;
+  border: 1px solid #ff4d4d26;
   transition: all .3s;
 }
 
 .activity-item:hover {
-  background: #008cff1f;
-  box-shadow: 0 4px 15px #008cff1a;
+  background: #ff4d4d1f;
+  box-shadow: 0 4px 15px #ff4d4d1a;
 }
 
 .trust-badge {

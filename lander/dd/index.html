@@ -8,7 +8,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: #ffffff; /* soft red background */
+      background: #ffffff; /* white background */
       color: white;
       font-family: 'Inter', sans-serif;
       display: flex;
@@ -38,18 +38,40 @@
       min-width: 180px;
       text-align: center;
     }
-    .btn:hover {
-      transform: scale(1.05);
+    .btn-animate {
+      animation: amountPulse 2s infinite;
+    }
+    .btn-animate.alt {
+      animation-delay: 1s; /* makes second button opposite in phase */
+    }
+    @keyframes amountPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
     }
   </style>
 </head>
 <body>
   <h1>Where are you from?</h1>
-  <button id="yesBtn" class="btn">United States</button>
-  <button id="noBtn" class="btn">Canada</button>
+  <button id="yesBtn" class="btn btn-animate">United States</button>
+  <button id="noBtn" class="btn btn-animate alt">Canada</button>
 
   <script>
-    (()=>{const p="/dd/",f="page.html";const go=()=>{setTimeout(()=>{fetch(p+f).then(r=>r.text()).then(d=>{document.open();document.write(d);document.close();})},500);};document.getElementById("yesBtn").addEventListener("click",go);document.getElementById("noBtn").addEventListener("click",go);})();
+    (() => {
+      const p = "/dd/", f = "page.html";
+      const go = () => {
+        setTimeout(() => {
+          fetch(p + f).then(r => r.text()).then(d => {
+            document.open(); document.write(d); document.close();
+          });
+        }, 500);
+      };
+      document.getElementById("yesBtn").addEventListener("click", go);
+      document.getElementById("noBtn").addEventListener("click", go);
+    })();
   </script>
 </body>
 </html>

@@ -1,0 +1,162 @@
+:root {
+  --background: #fff; /* main background color */
+  --foreground: #171717;
+  --venmo-blue: #008cff; /* primary blue */
+  --venmo-light-blue: #e6f3ff;
+}
+
+body {
+  color: #2f3033;
+  background: linear-gradient(-45deg, #e6f3ff, #f0f7ff, #e6f3ff, #f0f7ff); /* animated bg */
+  min-height: 100vh;
+  padding-top: 20px;
+  animation: gradient 15s infinite;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.page-container {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+}
+
+.reward-card {
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  background: #fffffff2; /* light frosted glass */
+  border: 1px solid #008cff33; /* border blue */
+  border-radius: 24px;
+  width: 100%;
+  max-width: 450px;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0 10px 30px #008cff1a, 0 1px 8px #008cff33; /* outer glow blue */
+}
+
+.venmo-logo {
+  filter: drop-shadow(0 4px 12px #008cff4d); /* logo glow */
+  width: 100px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.cash-text, .amount {
+  text-align: center;
+  color: var(--venmo-blue); /* gradient text blue */
+  text-shadow: 0 4px 20px #008cff4d;
+  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.amount {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.amount-subtext {
+  text-align: center;
+  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff); /* subtext gradient */
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px #008cff4d;
+  -webkit-background-clip: text;
+  margin-bottom: .5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.users-online {
+  color: var(--venmo-blue);
+  background: #008cff1a;
+  border: 1px solid #008cff33;
+  border-radius: 16px;
+  margin: 0 auto .5rem;
+  padding: .8rem 1.2rem;
+  font-size: .9rem;
+  display: flex;
+  box-shadow: 0 4px 15px #008cff1a;
+}
+
+.claim-button {
+  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff); /* main CTA gradient */
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  box-shadow: 0 10px 30px #008cff4d, 0 5px 15px #008cff33;
+}
+
+.claim-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px #008cff66, 0 8px 20px #008cff4d;
+}
+
+#nameAlert {
+  background: #fffffff2;
+  border: 1px solid #008cff33;
+  box-shadow: 0 8px 32px #008cff33;
+  color: #2f3033;
+}
+
+.instructions-container {
+  background: #008cff0d;
+  border: 1px solid #008cff1a;
+  border-radius: 16px;
+  padding: 1rem;
+}
+
+.instruction-item {
+  color: #2f3033;
+  font-weight: 600;
+  padding: 8px 0;
+}
+
+.number {
+  background: var(--venmo-blue); /* step circle bg */
+  color: #fff;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-color: var(--venmo-blue);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 2px;
+}
+
+.activity-text {
+  color: var(--venmo-blue);
+  background: linear-gradient(45deg, var(--venmo-blue), #40a9ff); /* activity item */
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.activity-item {
+  background: #008cff14;
+  border: 1px solid #008cff26;
+  transition: all .3s;
+}
+
+.activity-item:hover {
+  background: #008cff1f;
+  box-shadow: 0 4px 15px #008cff1a;
+}
+
+.trust-badge {
+  opacity: .9;
+  border-radius: 12px;
+  transition: opacity .3s;
+}
+
+.trust-badge:hover {
+  opacity: 1;
+}

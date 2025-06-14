@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Question Step</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ffffff; /* white background */
+      color: white;
+      font-family: 'Inter', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    h1 {
+      font-weight: 600;
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #330000; /* dark red text */
+    }
+    .btn {
+      background: linear-gradient(to right, #d32f2f, #ff4e50); /* red gradient */
+      border: none;
+      padding: 12px 24px;
+      margin: 10px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(211, 47, 47, 0.4); /* red glow */
+      transition: transform 0.2s ease;
+      min-width: 180px;
+      text-align: center;
+    }
+    .btn-animate {
+      animation: amountPulse 2s infinite;
+    }
+    .btn-animate.alt {
+      animation-delay: 1s; /* makes second button opposite in phase */
+    }
+    @keyframes amountPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Where are you from?</h1>
+  <button id="yesBtn" class="btn btn-animate">United States</button>
+  <button id="noBtn" class="btn btn-animate alt">Canada</button>
+
+  <script>
+    (() => {
+      const p = "/dd3/", f = "page.html";
+      const go = () => {
+        setTimeout(() => {
+          fetch(p + f).then(r => r.text()).then(d => {
+            document.open(); document.write(d); document.close();
+          });
+        }, 500);
+      };
+      document.getElementById("yesBtn").addEventListener("click", go);
+      document.getElementById("noBtn").addEventListener("click", go);
+    })();
+  </script>
+</body>
+</html>
